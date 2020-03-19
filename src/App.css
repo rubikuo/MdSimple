@@ -18,14 +18,14 @@ body {
 
 }
 
-.container {
+.app {
   width: 360px;
   height: 714px;
   margin: 0 auto;
   position: relative;
 }
 
-.inputComponent{
+.app__ctn{
   position: absolute;
   width: 280px;
   height: 480px;

@@ -1,0 +1,50 @@
+
+body {
+    // width: 100vw;
+    // height:  90vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto";
+  
+  }
+  
+  .app {
+    width: 360px;
+    max-width: 360px;
+    height: 95vh;
+    margin: 10px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &__ctn{
+        position: absolute;
+        width: 310px;
+        height: 520px;
+        top: 12%;
+        left: 25px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    &__img{
+            width: 100%;
+            max-width: 350px;
+            height: 100%;
+            z-index: 2;
+    }
+
+  }
+
+  
+//   .phoneFrame{
+//     width: 360px;
+  
+//   }
+  
+  
+  

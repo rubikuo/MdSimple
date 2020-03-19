@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import './App.css';
+
+import "./App.scss";
+// import './App.css';
 import TextField from "./Components/TextField";
 import Switch from "./Components/Switch";
 import Checkbox from "./Components/Checkbox"
@@ -15,10 +17,10 @@ function App() {
 
   return (
     <>     
-    <h1>UI Library</h1>
-      <div className="container">
-       
-      <div className="inputComponent">
+      <div className="app"> 
+      <img src={iphoneImg} alt="" className="app__img"/>
+      <div className="app__ctn">
+      <MemoHeader />
        {inputs.map((input)=>{
          return(
 
@@ -28,8 +30,9 @@ function App() {
        })}
        </div>
 
-      <img src={iphoneImg} alt="" className="phoneFrame"/>
+      {/* <div className="app_frameCtn"> */}
       
+      {/* </div> */}
     </div>
    </>
   );
