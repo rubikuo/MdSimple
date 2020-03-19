@@ -4,22 +4,31 @@ import { FaBatteryHalf, FaSignal, FaWifi } from 'react-icons/fa';
 import { MdMoreVert, MdSearch } from 'react-icons/md';
 import { FiArrowLeft } from 'react-icons/fi';
 
-const Header = () => {
+const Header = ({ currentPage }) => {
+	let title;
+	if (currentPage === 'home') {
+		title = 'MD SIMPLE';
+	}else{
+		title = currentPage;
+	}
 	return (
 		<div className={styles.header__ctn}>
 			<div className={styles.header__iconBar}>
-				<div className={styles['header__iconBar--left']}>
+				<div className={styles.header__lefticons}>
 					<FaSignal />
 					<span>Tele3</span>
 					<FaWifi />
 				</div>
-				<FaBatteryHalf className={styles['header__iconBar--right']} />
+				<FaBatteryHalf className={styles.header__righticons} />
 			</div>
 			<div className={styles.header__content}>
-				<div className={styles['header__content--left']}>
-					<FiArrowLeft />
+				<div className={`${styles.header__content} ${styles['header__content--left']}`}>
+					{currentPage !=="home" && <button className={styles.header__content__btn}>
+						<FiArrowLeft className={styles['header__content__btn--arrow']} />
+					</button>}
+					<span className={styles.header__content__title}>{title}</span>
 				</div>
-				<div className={styles['header__content--left']}>
+				<div className={`${styles.header__content} ${styles['header__content--right']}`}>
 					<MdSearch />
 					<MdMoreVert />
 				</div>

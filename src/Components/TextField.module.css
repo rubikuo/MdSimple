@@ -4,9 +4,7 @@
 
 .textField {
 	margin: 15px 0;
-	/* display: flex;
-	justify-content: center;
-	flex-direction: column; */
+	z-index: 2;
 }
 
 .textField__Ctn {
@@ -81,6 +79,9 @@
 	color: lightgrey;
 }
 
+/* .textField__input--multiline {
+
+} */
 
 
 .textField__errorMsg {
@@ -92,6 +93,8 @@
 	margin-left: 12px;
 }
 
-.textField__errorMsg--disabled {
+.textField__errorMsg--type-disabled {
     color: rgb(160, 160, 160);
 }
+
+

@@ -28,14 +28,15 @@ body {
         display: flex;
         align-items: center;
         flex-direction: column;
-
+        border-radius: 5px;
     }
 
     &__img{
             width: 100%;
             max-width: 350px;
             height: 100%;
-            z-index: 2;
+            overflow: hidden;
+            z-index: 1;
     }
 
   }
