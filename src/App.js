@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import TextField from "./Components/TextField";
+import Switch from "./Components/Switch";
+import Checkbox from "./Components/Checkbox"
+import RadioBtn from "./Components/RadioBtn";
+import MemoHeader from "./Components/Header";
+import iphoneImg from "./iphone-frame.png";
+
+const inputs = ["filled", "disabled"];
+
 
 function App() {
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>     
+    <h1>UI Library</h1>
+      <div className="container">
+       
+      <div className="inputComponent">
+       {inputs.map((input)=>{
+         return(
+
+          <TextField key={input} classNames={input} />
+        
+         )
+       })}
+       </div>
+
+      <img src={iphoneImg} alt="" className="phoneFrame"/>
+      
     </div>
+   </>
   );
 }
 
