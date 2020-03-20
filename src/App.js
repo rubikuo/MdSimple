@@ -9,7 +9,6 @@ import Checkbox from "./Components/Checkbox"
 import RadioBtn from "./Components/RadioBtn";
 import Header from "./Components/Header";
 import iphoneImg from "./iphone-frame.png";
-
 const inputTypes = ["filled", "disabled", "error", "counter"];
 const components = ["TextField", "Switch", "CheckBox", "RadioButton"]
 

@@ -18,9 +18,11 @@ const TextField = ({ inputType, inputsValue, handleInputValue }) => {
 				<label
 					className={
 						inputType === 'disabled' ? (
-							styles.textField__labelText
+							[	styles.textField__labelText, 
+								styles[`textField__labelText--disabled`] ].join(' ')
+						
 						) : inputsValue[inputType] !== '' ? (
-							styles[`textField__labelText--up`]
+							styles[`textField__labelText--top`]
 							
 						) : (
 							styles.textField__labelText
@@ -32,7 +34,7 @@ const TextField = ({ inputType, inputsValue, handleInputValue }) => {
 				<div className={styles.textField__underLine} />
 			</div>
 			<span
-				className={[ styles.textField__errorMsg, styles[`textField__errorMsg--type-${inputType}`] ].join(' ')}
+				className={[ styles.textField__helpText, styles[`textField__helpText--type-${inputType}`] ].join(' ')}
 			>
 				Help Text:
 			</span>

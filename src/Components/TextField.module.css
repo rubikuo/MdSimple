@@ -1,4 +1,4 @@
-*{
+* {
 	box-sizing: border-box;
 }
 
@@ -15,6 +15,8 @@
 	position: relative;
 }
 
+/****** Input Default ******/
+/***************************/
 
 .textField__input {
 	width: 280px;
@@ -28,14 +30,13 @@
 	color: #000000de;
 }
 
-
-
 .textField__input:focus {
-	/* outline: none; */
+	outline: none;
 	padding-top: 16px;
-	/* padding-bottom: 16px; */
 }
 
+/******  UnderLine ******/
+/************************/
 
 .textField__input ~ .textField__underLine {
 	position: absolute;
@@ -50,9 +51,13 @@
 }
 
 .textField__input:focus ~ .textField__underLine {
-	transform: scaleX(1) ;   
+	transform: scaleX(1);
 	opacity: 1;
 }
+
+
+/******  Label ******/
+/********************/
 
 .textField__input ~ .textField__labelText {
 	position: absolute;
@@ -64,47 +69,57 @@
 	transition: all .15s linear;
 }
 
-.textField__input:focus ~ .textField__labelText {
+.textField__input:focus ~ .textField__labelText,
+.textField__input:not(.textField__input--type-disabled):hover ~ .textField__labelText,
+.textField__input:active ~ .textField__labelText {
 	padding: 0;
-	top: 9px; /* need to confirm with Andreas! */
+	top: 9px;
 	font-size: 12px;
+	color: #00000099;
 }
 
-.textField__labelText--up{
+.textField__input:focus ~ .textField__labelText {
+	color: #6200ee;
+}
+
+.textField__labelText--top {
 	position: absolute;
 	z-index: 1;
 	left: 12px;
-	color: #b53d3d99;
+	color: #00000099;
 	font-size: 12px;
 	padding: 0;
 	top: 9px;
 }
 
+/******  Disabled Input ******/
+/*****************************/
 
-.textField__input:disabled{
+.textField__input:disabled {
 	background-color: rgba(182, 181, 181, 0.906);
 }
 
-.textField__input:disabled ~ .textField__labelText{
+.textField__input:disabled ~ .textField__labelText--disabled {
 	color: rgb(240, 240, 240);
 }
 
+/****** Error Input ******/
+/*************************/
 
 .textField__input--type-error {
 	height: 55px;
 }
 
-.textField__input--type-error ~ .textField__labelText{
-
-}
-
-.textField__input--type-error:focus ~ .textField__labelText{
+.textField__input--type-error:focus ~ .textField__labelText,
+.textField__input--type-error:hover ~ .textField__labelText {
 	color: #b00020;
-
 }
 
 
-.textField__errorMsg {
+/***** HelpText ******/
+/**********************/
+
+.textField__helpText {
 	font-size: 12px;
 	color: #00000099;
 	height: 16px;
@@ -113,10 +128,10 @@
 	margin-left: 12px;
 }
 
-.textField__errorMsg--type-disabled {
-    color: rgb(160, 160, 160);
+.textField__helpText--type-disabled {
+	color: rgb(160, 160, 160);
 }
 
-.textField__errorMsg--type-error {
-	color:#b00020;
+.textField__helpText--type-error {
+	color: #b00020;
 }
