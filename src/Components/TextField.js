@@ -1,22 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './TextField.module.css';
 
-const TextField = ({ inputType }) => {
+const TextField = ({ inputType, inputsValue, handleInputValue }) => {
+	
 	return (
 		<div className={styles.textField}>
 			<div className={styles.textField__Ctn}>
 				<input
+					onChange={handleInputValue}
+					value={inputsValue[inputType]}
 					type="text"
-					className={styles.textField__input}
+					name={inputType}
+					className={[ styles.textField__input, 
+						         styles[`textField__input--type-${inputType}`] ].join(' ')}
 					disabled={inputType === 'disabled' ? 'disabled' : ''}
 				/>
-				<label htmlFor="" className={styles.textField__labelText}>
+				<label
+					className={
+						inputType === 'disabled' ? (
+							styles.textField__labelText
+						) : inputsValue[inputType] !== '' ? (
+							styles[`textField__labelText--up`]
+							
+						) : (
+							styles.textField__labelText
+						)
+					}
+				>
 					Text
 				</label>
 				<div className={styles.textField__underLine} />
 			</div>
-			{/*why BEM undefined??? */}
-			<span className={[styles.textField__errorMsg, styles[`textField__errorMsg--type-${inputType}`]].join(" ") }>
+			<span
+				className={[ styles.textField__errorMsg, styles[`textField__errorMsg--type-${inputType}`] ].join(' ')}
+			>
 				Help Text:
 			</span>
 		</div>

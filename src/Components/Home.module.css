@@ -3,11 +3,9 @@
    justify-content: center;
    align-items: center;
    padding: 35px 0;
-   /* margin-top: 2px; */
    width: 100%;
    height: 100%;
    flex-wrap: wrap;
-   
 }
 
 .options {
@@ -20,7 +18,6 @@
    align-items: center;
    background-color: rgba(22, 80, 216, 0.748);
    color: rgb(223, 222, 222);
-   z-index: 2; /* is this ok? */
    cursor: pointer;
 }
 
