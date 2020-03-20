@@ -10,11 +10,11 @@ import RadioBtn from "./Components/RadioBtn";
 import Header from "./Components/Header";
 import iphoneImg from "./iphone-frame.png";
 
-const inputs = ["filled", "disabled", "multiline"];
+const inputs = ["filled", "disabled", "multiline", "textArea", "counter", "test"];
 const components = ["TextField", "Switch", "CheckBox", "RadioButton"]
 
 const App =() =>{
-  const[currentPage, updateCurrentPage] = useState("TextField");
+  const[currentPage, updateCurrentPage] = useState("home");
 
 
   return (
@@ -22,16 +22,18 @@ const App =() =>{
       <div className="app"> 
       <img src={iphoneImg} alt="" className="app__img"/>
       <div className="app__ctn">
-      <Header currentPage={currentPage}/>
-      {currentPage ==="home" && <Home  components={components}/>}
+      <Header currentPage={currentPage} updateCurrentPage={updateCurrentPage}/>
+      <div className="app__ctn__componentCtn">
+      {currentPage ==="home" && <Home  components={components} currentPage={currentPage} updateCurrentPage={updateCurrentPage}/>}
       {currentPage ==="TextField" && inputs.map((input)=>{
          return(
-          <TextField key={input} inputType={input} />
+          <TextField key={input} inputType={input} currentPage={currentPage} updateCurrentPage={updateCurrentPage}/>
          )
        })} 
-       {currentPage ==="SWITCH" && <Switch />}
-       {currentPage ==="CHECK BOX" && <Checkbox />}
-       {currentPage ==="RADIO BUTTON" && <RadioBtn />}
+       {currentPage ==="Switch" && <Switch />}
+       {currentPage ==="Check Box" && <Checkbox />}
+       {currentPage ==="Radio Button" && <RadioBtn />}
+       </div>
        </div>
     </div>
    </>

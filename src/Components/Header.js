@@ -4,11 +4,11 @@ import { FaBatteryHalf, FaSignal, FaWifi } from 'react-icons/fa';
 import { MdMoreVert, MdSearch } from 'react-icons/md';
 import { FiArrowLeft } from 'react-icons/fi';
 
-const Header = ({ currentPage }) => {
+const Header = ({ currentPage, updateCurrentPage }) => {
 	let title;
 	if (currentPage === 'home') {
 		title = 'MD SIMPLE';
-	}else{
+	} else {
 		title = currentPage;
 	}
 	return (
@@ -23,9 +23,11 @@ const Header = ({ currentPage }) => {
 			</div>
 			<div className={styles.header__content}>
 				<div className={`${styles.header__content} ${styles['header__content--left']}`}>
-					{currentPage !=="home" && <button className={styles.header__content__btn}>
-						<FiArrowLeft className={styles['header__content__btn--arrow']} />
-					</button>}
+					{currentPage !== 'home' && (
+						<button onClick={() => updateCurrentPage('home')} className={styles.header__content__btn}>
+							<FiArrowLeft className={styles['header__content__btn--arrow']} />
+						</button>
+					)}
 					<span className={styles.header__content__title}>{title}</span>
 				</div>
 				<div className={`${styles.header__content} ${styles['header__content--right']}`}>

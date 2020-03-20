@@ -17,7 +17,7 @@ const TextField = ({ inputType }) => {
 			</div>
 			{/*why BEM undefined??? */}
 			<span className={[styles.textField__errorMsg, styles[`textField__errorMsg--type-${inputType}`]].join(" ") }>
-				Error:s
+				Help Text:
 			</span>
 		</div>
 	);

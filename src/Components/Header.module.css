@@ -2,10 +2,8 @@
   width: 100%;
   height: 60px;
   background-color: rgba(67, 159, 240, 0.899);
-  /* border-radius: 3px 3px 0 0; */
   box-shadow: 0px 2px 2.5px 0px rgba(0,0,0,0.75);
-  /* border-top: 1px solid rgb(106, 106, 106); */
-
+  border-top: 1px solid rgb(106, 106, 106);
 }
 
 .header__iconBar, .header__content{
@@ -26,14 +24,15 @@
 
 .header__content{
   font-size: 20px;
-  color: rgb(224, 224, 224);
+  color: rgb(250, 250, 250);
   height: 40px;
 
 }
 
 .header__content--left{
-  width: 45%;
+  width: 60%;
   display: flex;
+  justify-content: flex-start;
 }
 
 .header__content--right{
@@ -51,7 +50,7 @@
   text-align: center;
   color: white;
   z-index: 3;
-  
+  cursor: pointer;
 }
 
 .header__content__btn:focus{
@@ -59,10 +58,10 @@
 }
 
 .header__content__btn:hover > .header__content__btn--arrow{
- color: rgb(255, 255, 55);
- /* font-size: 23px; */
+ color: rgb(51, 249, 252);
 }
 
 .header__content__title{
   font-size: 18px;
+  text-shadow: 1px 1px 1px grey;
 }
