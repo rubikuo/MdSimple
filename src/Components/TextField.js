@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './TextField.module.css';
+import { MdError } from 'react-icons/md';
 
 const TextField = ({ inputType, inputsValue, handleInputValue }) => {
 	
@@ -15,6 +16,7 @@ const TextField = ({ inputType, inputsValue, handleInputValue }) => {
 						         styles[`textField__input--type-${inputType}`] ].join(' ')}
 					disabled={inputType === 'disabled' ? 'disabled' : ''}
 				/>
+				{inputType==="error" && <MdError className={styles.textField__errorIcon} />}
 				<label
 					className={
 						inputType === 'disabled' ? (
@@ -36,7 +38,7 @@ const TextField = ({ inputType, inputsValue, handleInputValue }) => {
 			<span
 				className={[ styles.textField__helpText, styles[`textField__helpText--type-${inputType}`] ].join(' ')}
 			>
-				Help Text:
+				Help text:
 			</span>
 		</div>
 	);

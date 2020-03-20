@@ -69,7 +69,13 @@
 	transition: all .15s linear;
 }
 
-.textField__input:focus ~ .textField__labelText,
+.textField__input:focus ~ .textField__labelText {
+	padding: 0;
+	top: 9px;
+	font-size: 12px;
+	color: #6200ee;
+}
+
 .textField__input:not(.textField__input--type-disabled):hover ~ .textField__labelText,
 .textField__input:active ~ .textField__labelText {
 	padding: 0;
@@ -78,9 +84,7 @@
 	color: #00000099;
 }
 
-.textField__input:focus ~ .textField__labelText {
-	color: #6200ee;
-}
+
 
 .textField__labelText--top {
 	position: absolute;
@@ -115,6 +119,14 @@
 	color: #b00020;
 }
 
+.textField__errorIcon {
+	position: absolute;
+	right: 12px;
+	line-height: 24px;
+	font-size: 24px;
+
+}
+
 
 /***** HelpText ******/
 /**********************/
@@ -122,10 +134,11 @@
 .textField__helpText {
 	font-size: 12px;
 	color: #00000099;
-	height: 16px;
+	line-height: 16px;
 	align-items: flex-end;
 	display: flex;
 	margin-left: 12px;
+	margin-top: 3px;
 }
 
 .textField__helpText--type-disabled {
