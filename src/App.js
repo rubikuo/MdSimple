@@ -13,12 +13,12 @@ const inputTypes = ["filled", "disabled", "error", "counter"];
 const components = ["TextField", "Switch", "CheckBox", "RadioButton"]
 
 const App =() => {
-
   const[currentPage, updateCurrentPage] = useState("home");
-  const[inputsValue, updateInputsValue]
-  = useState({filled: "", disabled: "", error: "", counter: ""})
+  const[inputsValue, updateInputsValue] = useState({filled: "", disabled: "", error: "", counter: ""})
   const[mode, updateMode] = useState("origin");
-  const[checkStatus, updateCheckStatus] = useState(false);
+  const[modeSwitch, updateModeSwitch] = useState(false);
+  
+  
   /** textfield method */
   const handleInputValue = (e) => {
     console.log(inputsValue);
@@ -28,13 +28,12 @@ const App =() => {
   };
 
     /** switch method */
-    const handleMode = () => {
-      updateCheckStatus(checkStatus? false: true)
-      updateMode(checkStatus? "origin":"dark")
+    const handleMode = (e) => {
+      updateModeSwitch(e.target.checked)
+   
+      updateMode(mode ==="origin"? "dark": "origin")
     }
   
-
-
 
   return (
     <>     
@@ -50,17 +49,14 @@ const App =() => {
           <TextField 
           key={input} 
           inputType={input} 
-          currentPage={currentPage} 
-          updateCurrentPage={updateCurrentPage} 
-          inputsValue={inputsValue} 
-          updateInputsValue={updateInputsValue} 
+          inputsValue={inputsValue}  
           handleInputValue={handleInputValue}
           />
          )
        })} 
        {currentPage ==="Switch" 
-       && <Switch 
-          checkState={checkStatus}
+       && <Switch
+          modeSwitch={modeSwitch}
           handleMode={handleMode}
           />}
        {currentPage ==="Check Box" 

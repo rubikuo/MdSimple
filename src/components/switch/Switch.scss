@@ -49,6 +49,14 @@
 			margin-top: -12.5px; /* the position absolute combines with top: 50%, left:0, margin-top: -(minus) half of the item's height 
             to locate in the middle of it's parent element which is set to position relative */
 			transition: all .3s ease; /* to define how the effect will be */
+			
+		}
+		&:hover {
+			&::after{
+			   box-shadow: 0px 0px 0px 12px rgba(72,35,219,0.13);
+			}
+
+			
 		}
 	}
 }
