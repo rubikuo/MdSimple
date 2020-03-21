@@ -4,7 +4,7 @@ import { FaBatteryHalf, FaSignal, FaWifi } from 'react-icons/fa';
 import { MdMoreVert, MdSearch } from 'react-icons/md';
 import { FiArrowLeft } from 'react-icons/fi';
 
-const Header = ({ currentPage, updateCurrentPage }) => {
+const Header = ({ currentPage, updateCurrentPage, mode, updateMode }) => {
 	let title;
 	if (currentPage === 'home') {
 		title = 'MD SIMPLE';
@@ -12,9 +12,9 @@ const Header = ({ currentPage, updateCurrentPage }) => {
 		title = currentPage;
 	}
 	return (
-		<div className={styles.header__ctn}>
-			<div className={styles.header__iconBar}>
-				<div className={styles.header__lefticons}>
+		<div className={`${styles.header__ctn}, ${styles[`header__ctn--${mode}`]}`}>
+			<div className={[styles.header__iconBar, styles[`header__iconBar--${mode}`]].join(" ")}>
+				<div className={styles.header__lefticons} >
 					<FaSignal />
 					<span>Tele3</span>
 					<FaWifi />
