@@ -18,12 +18,22 @@ const App =() => {
   const[inputsValue, updateInputsValue]
   = useState({filled: "", disabled: "", error: "", counter: ""})
   const[mode, updateMode] = useState("origin");
+  const[checkStatus, updateCheckStatus] = useState(false);
+  /** textfield method */
   const handleInputValue = (e) => {
     console.log(inputsValue);
     console.log(e.target.name)
 		if (e.target.name === 'disabled') return;
 		updateInputsValue( {...inputsValue, [e.target.name]: e.target.value});
-	};
+  };
+
+    /** switch method */
+    const handleMode = () => {
+      updateCheckStatus(checkStatus? false: true)
+      updateMode(checkStatus? "origin":"dark")
+    }
+  
+
 
 
   return (
@@ -34,7 +44,8 @@ const App =() => {
       <Header currentPage={currentPage} updateCurrentPage={updateCurrentPage} mode={mode} updateMode={updateMode}/>
       <form className="app__componentCtn"> 
       {currentPage ==="home" && <Home components={components} currentPage={currentPage} updateCurrentPage={updateCurrentPage}/>}
-      {currentPage ==="TextField" && inputTypes.map((input)=>{
+      {currentPage ==="TextField" 
+       && inputTypes.map((input)=>{
          return(
           <TextField 
           key={input} 
@@ -43,12 +54,19 @@ const App =() => {
           updateCurrentPage={updateCurrentPage} 
           inputsValue={inputsValue} 
           updateInputsValue={updateInputsValue} 
-          handleInputValue={handleInputValue}/>
+          handleInputValue={handleInputValue}
+          />
          )
        })} 
-       {currentPage ==="Switch" && <Switch updateMode={updateMode}/>}
-       {currentPage ==="Check Box" && <Checkbox />}
-       {currentPage ==="Radio Button" && <RadioBtn />}
+       {currentPage ==="Switch" 
+       && <Switch 
+          checkState={checkStatus}
+          handleMode={handleMode}
+          />}
+       {currentPage ==="Check Box" 
+       && <Checkbox />}
+       {currentPage ==="Radio Button" 
+       && <RadioBtn />}
        </form>
        </div>
     </div>
