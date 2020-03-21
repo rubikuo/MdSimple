@@ -6,7 +6,7 @@ const Switch = ({modeSwitch, handleMode}) => {
 		<div className="switch">
 			<label htmlFor="mode" className="switch__label">
                 <span 
-                className="switch__title"> Dark Mode is <b>{ modeSwitch ? "on":"off" }</b></span>
+                className="switch__title"> Dark Mode: <b>{ modeSwitch ? "ON":"OFF" }</b></span>
                 <input 
                 type="checkbox"
                 checked={modeSwitch}
