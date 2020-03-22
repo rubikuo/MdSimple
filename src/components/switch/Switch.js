@@ -20,26 +20,27 @@ const Switch = ({ modeSwitch, handleMode }) => {
 			</label>
 
 			<span className="switch__title">Disabled: OFF</span>
-			<label htmlFor="disabled" className="switch__label">
+			<label htmlFor="disabled-off" className="switch__label">
 				<input
 					type="checkbox"
 					disabled="disabled"
-					name="disabled"
-					id="disabled"
-					checked="checked"
-					className="switch__input switch__input--disabled"
+					name="disabled-off"
+					id="disabled-off"
+					className="switch__input switch__input--disabled-off"
 				/>
 				<span className="switch--fake" />
 			</label>
             <span className="switch__title">
-					dragable: OFF
+					Disabled: ON
 				</span>
-			<label htmlFor="dragable" className="switch__label">
+			<label htmlFor="disabled-on" className="switch__label">
 				<input
 					type="checkbox"
-					name="dragable"
-					id="dragable"
-					className="switch__input switch__input--dragable"
+					name="disabled-on"
+                    id="disabled-on"
+                    checked={true}
+                    disabled="disabled"
+					className="switch__input switch__input--disabled-on"
 				/>
 				<span className="switch--fake" />
 			</label>

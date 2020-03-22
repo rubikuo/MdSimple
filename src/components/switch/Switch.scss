@@ -3,7 +3,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 36px;
+		width: 30px;
 		margin: 0 auto;
 		border-radius: 5px;
 		background-color: rgba(169, 168, 168, 0.33);
@@ -12,6 +12,7 @@
 		display: inline-block;
 		margin-bottom: 15px;
 	}
+	/* enable - Switch - on effect */
 	&__input {
 		border: 0;
 		padding: 0;
@@ -21,43 +22,107 @@
 		opacity: 0;
 		position: absolute;
 		overflow: hidden;
-		&:checked {
-			+ span {
-				background-color: rgb(180, 156, 215);
+		/* exclud disabled checkbox */
+		&:not(:disabled) {
+			&:checked {
+				+ span {
+					background-color: rgb(180, 156, 215);
 
-				&::after {
-					transform: translate(100%); /* to move the button with 100%(width)of parent element to the right */
-					background-color: #6200eeff;
+					&::after {
+						box-shadow: 0px 0px 1px rgb(101, 100, 100);
+						transform: translate(
+							100%
+						); /* to move the button with 100%(width)of parent element to the right */
+						background-color: #6200eeff;
+					}
 				}
-			}
-			&:not(.switch__input--disabled) {
-				&:hover,
+
+				&:hover {
+					+ span {
+						&::after {
+							box-shadow: 0px 0px 0px 12px rgba(72, 35, 219, 0.15);
+							background-color: #6200eeff;
+						}
+					}
+				}
 				&:focus {
 					+ span {
 						&::after {
-							box-shadow: 0px 0px 0px 12px rgba(72, 35, 219, 0.265);
+							box-shadow: 0px 0px 0px 12px rgba(72, 35, 219, 0.35);
+							background-color: #6200eeff;
+						}
+					}
+				}
+				&:active {
+					+ span {
+						&::after {
+							box-shadow: 0px 0px 0px 12px rgba(72, 35, 219, 0.45);
+							background-color: #6200eeff;
 						}
 					}
 				}
 			}
 		}
-		&:not(.switch__input--disabled) {
-			&:hover,
+		/* enable - switch off effect */
+		&:not(:disabled) {
+			&:hover {
+				+ span {
+					&::after {
+						box-shadow: 0px 0px 0px 12px rgba(131, 131, 131, 0.15);
+						background-color: rgb(255, 255, 255);
+					}
+				}
+			}
 			&:focus {
 				+ span {
 					&::after {
-						box-shadow: 0px 0px 0px 12px rgba(131, 131, 131, 0.265);
-						background-color: rgb(216, 215, 215);
+						box-shadow: 0px 0px 0px 12px rgba(131, 131, 131, 0.35);
+						background-color: rgb(230, 230, 230);
+					}
+				}
+			}
+			&:active {
+				+ span {
+					&::after {
+						box-shadow: 0px 0px 0px 12px rgba(131, 131, 131, 0.45);
+						background-color: rgb(215, 215, 215);
+					}
+				}
+			}
+		}
+		/* disabled - switch off effect */
+		&--disabled-off {
+			+ span {
+				background-color: #cecece;
+
+				&::after {
+					box-shadow: 0px 0px 1px rgb(101, 100, 100);
+					background: rgba(240, 240, 240, 0.988);
+				}
+			}
+		}
+		&--disabled-on {
+			&:checked {
+				+ span {
+					background-color: rgb(180, 156, 215);
+
+					&::after {
+						box-shadow: 0px 0px 1px rgb(101, 100, 100);
+						transform: translate(
+							100%
+						); /* to move the button with 100%(width)of parent element to the right */
+						background-color: #6200eeff;
 					}
 				}
 			}
 		}
 	}
+
 	&--fake {
 		width: 36px;
 		height: 16px;
 		position: relative; /* because it's pseudo element is defined as position absolute so here has to be relative*/
-		background-color: #60606089;
+		background-color: #606060a8;
 		border-radius: 50px 50px;
 		display: block; /* this is important because .fake is an inline element so we must set it to "block" to be able to set the width and height*/
 		transition: all .5s ease;
@@ -70,8 +135,9 @@
 			border-radius: 50%;
 			z-index: 2;
 			position: absolute;
-			top: 65%;
-			left: 0;
+			box-shadow: 0px 0px 1px rgb(101, 100, 100);
+			top: 62%;
+			left: 0px;
 			margin-top: -12.5px; /* the position absolute combines with top: 50%, left:0, margin-top: -(minus) half of the item's height 
             to locate in the middle of it's parent element which is set to position relative */
 			transition: all .3s ease; /* to define how the effect will be */
