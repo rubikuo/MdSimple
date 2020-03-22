@@ -13,10 +13,10 @@ const inputTypes = ["filled", "disabled", "error", "counter"];
 const components = ["TextField", "Switch", "CheckBox", "RadioButton"]
 
 const App =() => {
-  const[currentPage, updateCurrentPage] = useState("home");
-  const[inputsValue, updateInputsValue] = useState({filled: "", disabled: "", error: "", counter: ""})
-  const[mode, updateMode] = useState("origin");
-  const[modeSwitch, updateModeSwitch] = useState(false);
+  const[currentPage, setCurrentPage] = useState("home");
+  const[inputsValue, setInputsValue] = useState({filled: "", disabled: "", error: "", counter: ""})
+  const[mode, setMode] = useState("origin");
+  const[modeSwitch, setModeSwitch] = useState(false);
   
   
   /** textfield method */
@@ -24,14 +24,14 @@ const App =() => {
     console.log(inputsValue);
     console.log(e.target.name)
 		if (e.target.name === 'disabled') return;
-		updateInputsValue( {...inputsValue, [e.target.name]: e.target.value});
+		setInputsValue( {...inputsValue, [e.target.name]: e.target.value});
   };
 
     /** switch method */
     const handleMode = (e) => {
-      updateModeSwitch(e.target.checked)
+      setModeSwitch(e.target.checked)
    
-      updateMode(mode ==="origin"? "dark": "origin")
+      setMode(mode ==="origin"? "dark": "origin")
     }
   
 
@@ -40,9 +40,9 @@ const App =() => {
       <div className="app"> 
       <img src={iphoneImg} alt="" className="app__img"/>
       <div className="app__ctn">
-      <Header currentPage={currentPage} updateCurrentPage={updateCurrentPage} mode={mode} updateMode={updateMode}/>
+      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} mode={mode} setMode={setMode}/>
       <form className="app__componentCtn"> 
-      {currentPage ==="home" && <Home components={components} currentPage={currentPage} updateCurrentPage={updateCurrentPage}/>}
+      {currentPage ==="home" && <Home components={components} currentPage={currentPage} setCurrentPage={setCurrentPage}/>}
       {currentPage ==="TextField" 
        && inputTypes.map((input)=>{
          return(

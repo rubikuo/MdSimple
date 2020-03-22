@@ -2,10 +2,10 @@
 import React, {useState} from 'react';
 import styles from './Home.module.css';
 
-const Home = ({ components, updateCurrentPage}) => {
+const Home = ({ components, setCurrentPage}) => {
      const handleCurrentPage =(page)=>{
          console.log(page)
-         updateCurrentPage(page)
+         setCurrentPage(page)
      }
 
 	return (

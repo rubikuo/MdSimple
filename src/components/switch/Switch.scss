@@ -90,7 +90,7 @@
 				}
 			}
 		}
-		/* disabled - switch off effect */
+		/* Disabled - switch off effect */
 		&--disabled-off {
 			+ span {
 				background-color: #cecece;
@@ -101,17 +101,17 @@
 				}
 			}
 		}
+		/* Disabled - switch on effect */
 		&--disabled-on {
 			&:checked {
 				+ span {
-					background-color: rgb(180, 156, 215);
-
+					background-color: rgb(205, 187, 232);
 					&::after {
 						box-shadow: 0px 0px 1px rgb(101, 100, 100);
 						transform: translate(
 							100%
 						); /* to move the button with 100%(width)of parent element to the right */
-						background-color: #6200eeff;
+						background-color: rgb(177, 145, 221);
 					}
 				}
 			}
@@ -136,7 +136,7 @@
 			z-index: 2;
 			position: absolute;
 			box-shadow: 0px 0px 1px rgb(101, 100, 100);
-			top: 62%;
+			top: 65%;
 			left: 0px;
 			margin-top: -12.5px; /* the position absolute combines with top: 50%, left:0, margin-top: -(minus) half of the item's height 
             to locate in the middle of it's parent element which is set to position relative */

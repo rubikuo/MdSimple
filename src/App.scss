@@ -15,6 +15,7 @@ body {
 	position: relative;
 	display: flex;
 	justify-content: center;
+	// overflow: hidden;
 
 	&__ctn {
 		position: absolute;
@@ -26,6 +27,7 @@ body {
 		background: linear-gradient(0deg, rgba(230, 230, 230, 0.933), rgba(235, 235, 235, 0.81)),
 			url("https://images.pexels.com/photos/2395251/pexels-photo-2395251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 		background-size: cover;
+		// overflow: hidden;
 	}
 	&__componentCtn {
 		width: 100%;

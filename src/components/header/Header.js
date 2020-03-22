@@ -4,7 +4,7 @@ import { FaBatteryHalf, FaSignal, FaWifi } from 'react-icons/fa';
 import { MdMoreVert, MdSearch } from 'react-icons/md';
 import { FiArrowLeft } from 'react-icons/fi';
 
-const Header = ({ currentPage, updateCurrentPage, mode, updateMode }) => {
+const Header = ({ currentPage, setCurrentPage, mode }) => {
 	let title;
 	if (currentPage === 'home') {
 		title = 'MD SIMPLE';
@@ -24,7 +24,7 @@ const Header = ({ currentPage, updateCurrentPage, mode, updateMode }) => {
 			<div className={styles.header__content}>
 				<div className={`${styles.header__content} ${styles['header__content--left']}`}>
 					{currentPage !== 'home' && (
-						<button onClick={() => updateCurrentPage('home')} className={styles.header__content__btn}>
+						<button onClick={() => setCurrentPage('home')} className={styles.header__content__btn}>
 							<FiArrowLeft className={styles['header__content__btn--arrow']} />
 						</button>
 					)}
