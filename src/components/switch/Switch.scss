@@ -3,10 +3,14 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		width: 36px;
+		margin: 0 auto;
+		border-radius: 5px;
+		background-color: rgba(169, 168, 168, 0.33);
 	}
 	&__title {
 		display: inline-block;
-		margin: 10px 0;
+		margin-bottom: 15px;
 	}
 	&__input {
 		border: 0;
@@ -25,10 +29,25 @@
 					transform: translate(100%); /* to move the button with 100%(width)of parent element to the right */
 					background-color: #6200eeff;
 				}
+			}
+			&:not(.switch__input--disabled) {
 				&:hover,
 				&:focus {
+					+ span {
+						&::after {
+							box-shadow: 0px 0px 0px 12px rgba(72, 35, 219, 0.265);
+						}
+					}
+				}
+			}
+		}
+		&:not(.switch__input--disabled) {
+			&:hover,
+			&:focus {
+				+ span {
 					&::after {
-						box-shadow: 0px 0px 0px 12px rgba(72, 35, 219, 0.13);
+						box-shadow: 0px 0px 0px 12px rgba(131, 131, 131, 0.265);
+						background-color: rgb(216, 215, 215);
 					}
 				}
 			}
@@ -38,7 +57,7 @@
 		width: 36px;
 		height: 16px;
 		position: relative; /* because it's pseudo element is defined as position absolute so here has to be relative*/
-		background-color: #8a8a8a89;
+		background-color: #60606089;
 		border-radius: 50px 50px;
 		display: block; /* this is important because .fake is an inline element so we must set it to "block" to be able to set the width and height*/
 		transition: all .5s ease;
@@ -47,7 +66,7 @@
 			display: block;
 			width: 20px;
 			height: 20px;
-			background: rgb(138, 137, 138);
+			background: rgb(245, 245, 245);
 			border-radius: 50%;
 			z-index: 2;
 			position: absolute;
@@ -56,11 +75,6 @@
 			margin-top: -12.5px; /* the position absolute combines with top: 50%, left:0, margin-top: -(minus) half of the item's height 
             to locate in the middle of it's parent element which is set to position relative */
 			transition: all .3s ease; /* to define how the effect will be */
-		}
-		&:hover {
-			&::after {
-				box-shadow: 0px 0px 0px 12px rgba(138, 138, 138, 0.13);
-			}
 		}
 	}
 }
