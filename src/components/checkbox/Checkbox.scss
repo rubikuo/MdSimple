@@ -16,7 +16,7 @@
 		margin: -1px;
 		opacity: 0;
         position: absolute;
-
+        overflow: hidden;
 		&:not(:disabled) {
 			&:checked {
 				+ span {

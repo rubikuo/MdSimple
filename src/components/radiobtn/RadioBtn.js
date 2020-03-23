@@ -1,14 +1,15 @@
 import React from 'react';
+import "./RadioBtn.css";
 
 const RadioBtn = () => {
 	const datas = [ 'Female', 'Male', 'Other', 'Disabled' ];
 
 	return (
 		<div className="radio">
-			<span>Gender</span>
+			<span className="radio__title">Gender</span>
 			{datas.map((data) => {
 				return (
-					<div className="radio__ctn" key={data}>
+					<label htmlFor={data} className="radio__ctn" key={data}>
 						<input
 							type="radio"
 							className="radio__input"
@@ -18,8 +19,8 @@ const RadioBtn = () => {
 							disabled={data === 'Disabled' ? true : false}
 						/>
 						<span className="radio--fake" />
-						<label htmlFor={data}>{data === 'Disabled' ? 'Disabled option' : data}</label>
-					</div>
+						<span className="radio__option" >{data === 'Disabled' ? 'Disabled option' : data}</span>
+					</label>
 				);
 			})}
 		</div>
