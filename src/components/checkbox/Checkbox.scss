@@ -1,16 +1,96 @@
-ul{
-    list-style: none;
-}
+.checkbox {
+	&__label {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 30px;
+		margin: 0 auto;
+		border-radius: 5px;
+		background: transparent;
+	}
+	&__input{
+		border: 0;
+		padding: 0;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		opacity: 0;
+        position: absolute;
 
-.checkbox{
-    margin: 40px auto;
-    max-width: 700px;
-}
+		&:not(:disabled) {
+			&:checked {
+				+ span {
+					background-color: #6200eeff;
+					&::after {
+                        content: '';
+                        opacity: 1;
+						height: 6px;
+						width: 12px;
+						-webkit-transform-origin: left top;
+						transform-origin: left top;
+						border-left: 2px solid #f9f9f9;
+						border-bottom: 2px solid #f9f9f9;
+						left: 50%;
+						top: 50%;
+						border-radius: 0;
+						position: absolute;
+						transition: all .3s ease; /* to define how the effect will be */
+					}
+				}
 
-li{
-    margin-top: 1em;
-}
+				&:hover {
+					+ span {
+						box-shadow: 0px 0px 0px 12px rgba(72, 35, 219, 0.15);
+					}
+				}
+			}
+		}
+		&:not(:disabled) {
+			&:hover {
+				+ span {
+					box-shadow: 0px 0px 0px 12px rgba(131, 131, 131, 0.15);
+				}
+			}
+			&:focus {
+				+ span {
+					box-shadow: 0px 0px 0px 12px rgba(131, 131, 131, 0.35);
+				}
+			}
+			&:active {
+				+ span {
+					box-shadow: 0px 0px 0px 12px rgba(131, 131, 131, 0.35);
+				}
+			}
+		}
+	}
+	&--fake {
+		width: 24px;
+		height: 24px;
+		position: relative; /* because it's pseudo element is defined as position absolute so here has to be relative*/
+		background-color: #6200eeff;
+		border-radius: 2px;
+		display: block; /* this is important because .fake is an inline element so we must set it to "block" to be able to set the width and height*/
+		transition: all .5s ease;
 
-label{
-    font-weight: bold;
+		&::after {
+			opacity: 0;
+			height: 24px;
+			width: 24px;
+			border-radius: 50%;
+			content: '';
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%) rotate(-45deg);
+			position: absolute; /* the position absolute combines with top: 50%, left:0, margin-top: -(minus) half of the item's height
+		    to locate in the middle of it's parent element which is set to position relative */
+			transition: all .3s ease; /* to define how the effect will be */
+		}
+	}
+	&__list {
+		list-style: none;
+		pointer-events: none;
+		&--item {
+			margin: 10px;
+		}
+	}
 }
