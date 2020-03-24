@@ -61,7 +61,7 @@ const Checkbox = () => {
 				/>
                 
 				<span className="checkbox--fake"/>
-                <span className="checkbox__option">All</span>
+                <span className="checkbox__option--name">All</span>
 			</label>
     
 			<ul className="checkbox__list">
@@ -76,10 +76,10 @@ const Checkbox = () => {
 									checked={opt.checked}
 									onChange={handleOptions}
 									value={opt.country}
-									id={opt.country}
+									id={opt.country} /*重要 */
 								/>
 								<span className="checkbox--fake checkbox--fake-sub"/>
-								<span className="checkbox__option">{opt.country}</span> 
+								<span className="checkbox__option--name">{opt.country}</span> 
 							</label>
 						</li>
 					);
