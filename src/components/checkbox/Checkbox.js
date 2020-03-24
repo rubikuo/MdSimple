@@ -12,12 +12,14 @@ const Checkbox = () => {
 	const parentRef = useRef();
 
 	const handleAllChecked = (e) => {
+		console.log("all")
 		let copyOptions = [ ...options ];
 		copyOptions.forEach((place) => (place.checked = e.target.checked));
 		setOptions(copyOptions);
 	};
 
 	const handleOptions = (e) => {
+		console.log("options")
 		let copyOptions = [ ...options ];
 		copyOptions.forEach((opt) => {
 			if (opt.country === e.target.value) opt.checked = e.target.checked;
@@ -42,12 +44,14 @@ const Checkbox = () => {
 			parentRef.current.indeterminate = false;
 			parentRef.current.checked = false;
 		}
+		console.log(options)
 	};
 
+     
 	return (
+		
 		<div className="checkbox">
-            <label htmlFor="option" className="checkbox__label checkbox__label--parent">
-      
+            <label htmlFor="option" className="checkbox__ctn checkbox__ctn--parent">
 				<input
 					type="checkbox"
 					id="option"
@@ -57,14 +61,14 @@ const Checkbox = () => {
 				/>
                 
 				<span className="checkbox--fake"/>
-                {/* <span>All</span> */}
+                <span className="checkbox__option">All</span>
 			</label>
     
 			<ul className="checkbox__list">
 				{options.map((opt, i) => {
 					return (
 						<li key={opt.id} className="checkbox__list--item">
-							<label htmlFor={opt.country} className="checkbox__label checkbox__label--subOption">
+							<label htmlFor={opt.country} className="checkbox__ctn checkbox__ctn--subOption">
 								<input
 									type="checkbox"
 									name={opt.country}
@@ -72,9 +76,10 @@ const Checkbox = () => {
 									checked={opt.checked}
 									onChange={handleOptions}
 									value={opt.country}
+									id={opt.country}
 								/>
-								<span className="checkbox--fake"/>
-								{/* <span>{opt.country}</span> */}
+								<span className="checkbox--fake checkbox--fake-sub"/>
+								<span className="checkbox__option">{opt.country}</span> 
 							</label>
 						</li>
 					);
