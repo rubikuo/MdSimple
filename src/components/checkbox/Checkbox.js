@@ -12,14 +12,14 @@ const Checkbox = () => {
 	const parentRef = useRef();
 
 	const handleAllChecked = (e) => {
-		console.log("all")
+		console.log('all');
 		let copyOptions = [ ...options ];
 		copyOptions.forEach((place) => (place.checked = e.target.checked));
 		setOptions(copyOptions);
 	};
 
 	const handleOptions = (e) => {
-		console.log("options")
+		console.log('options');
 		let copyOptions = [ ...options ];
 		copyOptions.forEach((opt) => {
 			if (opt.country === e.target.value) opt.checked = e.target.checked;
@@ -44,14 +44,12 @@ const Checkbox = () => {
 			parentRef.current.indeterminate = false;
 			parentRef.current.checked = false;
 		}
-		console.log(options)
+		console.log(options);
 	};
 
-     
 	return (
-		
 		<div className="checkbox">
-            <label htmlFor="option" className="checkbox__ctn checkbox__ctn--parent">
+			<label htmlFor="option" className="checkbox__ctn checkbox__ctn--main">
 				<input
 					type="checkbox"
 					id="option"
@@ -59,11 +57,11 @@ const Checkbox = () => {
 					onChange={handleAllChecked}
 					className="checkbox__input checkbox__input--main"
 				/>
-                
-				<span className="checkbox--fake"/>
-                <span className="checkbox__option--name">All</span>
+
+				<span className="checkbox--fake" />
+				<span className="checkbox__option--name">All</span>
 			</label>
-    
+
 			<ul className="checkbox__list">
 				{options.map((opt, i) => {
 					return (
@@ -78,17 +76,22 @@ const Checkbox = () => {
 									value={opt.country}
 									id={opt.country} /*重要 */
 								/>
-								<span className="checkbox--fake checkbox--fake-sub"/>
-								<span className="checkbox__option--name">{opt.country}</span> 
+								<span className="checkbox--fake checkbox--fake-sub" />
+								<span className="checkbox__option--name">{opt.country}</span>
 							</label>
 						</li>
 					);
 				})}
 			</ul>
-            {/* <label htmlFor="disabled" className="checkbox__label--disabled">
-            <input type="checkbox" disabled className=" checkbox__input checkbox__input--disabled"/>
-            Disabled
-            </label> */}
+			<label htmlFor="disabled" className="checkbox__ctn checkbox__ctn-disabled">
+				<input 
+				type="checkbox" 
+				disabled  
+				id="disabled" 
+				className="checkbox__input checkbox__input-disabled"/>
+				<span className="checkbox--fake checkbox--fake-disabled" />
+				<span className=" checkbox__option--name checkbox__option--name-disabled"> Disabled </span>
+			</label>
 		</div>
 	);
 };
