@@ -1,3 +1,7 @@
+/**********************
+implementing css module 
+**********************/
+
 .homeCtn{
    display: flex;
    justify-content: center;
@@ -16,13 +20,14 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: rgba(22, 80, 216, 0.748);
+   background-color: rgba(22, 80, 216, 0.653);
    color: rgb(223, 222, 222);
    cursor: pointer;
+   font-size: 18px;
 }
 
-/* .options:hover{
+.options:hover, .options:focus{
+   outline: none;
+   box-shadow: 0px 0px 2px 2px rgb(133, 100, 254);
    
-} */
-
-/* https://images.pexels.com/photos/1568607/pexels-photo-1568607.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260 */
+}

@@ -88,9 +88,19 @@ const Checkbox = () => {
 				type="checkbox" 
 				disabled  
 				id="disabled" 
-				className="checkbox__input checkbox__input-disabled"/>
+				className="checkbox__input checkbox__input--disabled-off"/>
 				<span className="checkbox--fake checkbox--fake-disabled" />
 				<span className=" checkbox__option--name checkbox__option--name-disabled"> Disabled </span>
+			</label>
+			<label htmlFor="disabled" className="checkbox__ctn checkbox__ctn-disabled">
+				<input 
+				type="checkbox" 
+				disabled
+				checked
+				id="disabled" 
+				className="checkbox__input checkbox__input--disabled-on"/>
+				<span className="checkbox--fake checkbox--fake-disabled" />
+				<span className=" checkbox__option--name checkbox__option--name-disabled"> Checked & Disabled </span>
 			</label>
 		</div>
 	);

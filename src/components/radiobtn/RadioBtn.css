@@ -1,3 +1,7 @@
+/*******************************
+implementing css module with BEM 
+********************************/
+
 .radio {
 	width: 100%;
 	display: flex;
@@ -36,18 +40,29 @@
 	opacity: 1;
 }
 
-.radio__input[type="radio"]:not(:disabled):hover + .radio--fake {
-	border-color: #6200eeff;
+.radio__input[type="radio"]:not(:disabled):hover + .radio--fake::before {
+	background-color: rgba(99, 0, 238, 0.07);
+	opacity: 1;
+}
+
+.radio__input[type="radio"]:not(:disabled):focus + .radio--fake::before {
+	background-color: rgba(99, 0, 238, 0.15);
+	opacity: 1;
+}
+
+.radio__input[type="radio"]:not(:disabled):active + .radio--fake::before {
+	background-color: rgba(99, 0, 238, 0.25);
+	opacity: 1;
 }
 
 .radio .radio--fake {
 	width: 20px;
 	height: 20px;
-	position: relative; /* because it's pseudo element is defined as position absolute so here has to be relative*/
+	position: relative;
 	background-color: white;
 	border-radius: 50px 50px;
 	border: 2px #00000089 solid;
-	display: block; /* this is important because .fake is an inline element so we must set it to "block" to be able to set the width and height*/
+	display: block;
 	transition: all .5s ease;
 }
 
@@ -68,16 +83,28 @@
 	transition: all .3s ease;
 }
 
-.radio__input[type="radio"]:disabled + .radio--fake{
+.radio .radio--fake::before {
+	content: '';
+	height: 38px;
+	width: 38px;
+	opacity: 0;
+	border-radius: 50%;
+	z-index: 4;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	background-color: rgba(72, 35, 219, 0.15);
+}
+
+.radio__input[type="radio"]:disabled + .radio--fake {
 	border-color: #78787889;
-	
 }
 
 span.radio__option {
 	margin-left: 20px;
 }
 
-.radio__input[type="radio"]:disabled ~ span.radio__option{
-	color:  #78787889;
+.radio__input[type="radio"]:disabled ~ span.radio__option {
+	color: #78787889;
 }
-

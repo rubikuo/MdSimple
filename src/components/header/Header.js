@@ -24,11 +24,12 @@ const Header = ({ currentPage, setCurrentPage, mode }) => {
 			<div className={styles.header__content}>
 				<div className={`${styles.header__content} ${styles['header__content--left']}`}>
 					{currentPage !== 'home' && (
-						<button onClick={() => setCurrentPage('home')} className={styles.header__content__btn}>
-							<FiArrowLeft className={styles['header__content__btn--arrow']} />
+						<button onClick={() => setCurrentPage('home')} className={styles.header__btn}>
+							<FiArrowLeft className={styles['header__btn--arrow']} />
+							<div className={styles["header__btn--boxShadow"]}></div>
 						</button>
 					)}
-					<span className={styles.header__content__title}>{title}</span>
+					<span className={styles["header__content--title"]}>{title}</span>
 				</div>
 				<div className={`${styles.header__content} ${styles['header__content--right']}`}>
 					<MdSearch />

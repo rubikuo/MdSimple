@@ -10,19 +10,10 @@ const Home = ({ components, setCurrentPage}) => {
 
 	return (
 		<div className={styles.homeCtn}>
-			<div className={styles.options} onClick={()=>handleCurrentPage("TextField")}>TextField</div>
-			<div className={styles.options} onClick={()=>handleCurrentPage("Switch")}>Switch</div>
-			<div className={styles.options} onClick={()=>handleCurrentPage("Check Box")}>Checkbox</div>
-			<div className={styles.options} onClick={()=>handleCurrentPage("Radio Button")}>Radio Button</div>
-
-			{/** why??? */}
-			{/* {components.map((comp) =>{
-                return(
-                    <div key={comp} className={styles.comp}> 
-                        {comp}
-                    </div>
-                )
-            })} */}
+			<button className={styles.options} onClick={()=>handleCurrentPage("TextField")}>TextField</button>
+			<button className={styles.options} onClick={()=>handleCurrentPage("Switch")}>Switch</button>
+			<button className={styles.options} onClick={()=>handleCurrentPage("Check Box")}>Checkbox</button>
+			<button className={styles.options} onClick={()=>handleCurrentPage("Radio Button")}>Radio Button</button>
 		</div>
 	);
 };

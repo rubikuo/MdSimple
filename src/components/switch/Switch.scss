@@ -1,3 +1,7 @@
+/*******************************
+implementing scss with BEM 
+********************************/
+
 .switch {
 	&__label {
 		display: flex;
@@ -32,7 +36,7 @@
 						box-shadow: 0px 0px 1px rgb(101, 100, 100);
 						transform: translate(
 							100%
-						); /* to move the button with 100%(width)of parent element to the right */
+						);
 						background-color: #6200eeff;
 					}
 				}
@@ -62,9 +66,7 @@
 					}
 				}
 			}
-		}
-		/* enable - switch off (not checked )effect */
-		&:not(:disabled) {
+			/* enable - switch off (not checked )effect */
 			&:hover {
 				+ span {
 					&::after {
@@ -90,6 +92,8 @@
 				}
 			}
 		}
+		
+	
 		/* Disabled - switch off effect */
 		&--disabled-off {
 			+ span {
@@ -110,7 +114,7 @@
 						box-shadow: 0px 0px 1px rgb(101, 100, 100);
 						transform: translate(
 							100%
-						); /* to move the button with 100%(width)of parent element to the right */
+						); 
 						background-color: rgb(177, 145, 221);
 					}
 				}
@@ -121,10 +125,10 @@
 	&--fake {
 		width: 36px;
 		height: 16px;
-		position: relative; /* because it's pseudo element is defined as position absolute so here has to be relative*/
+		position: relative; 
 		background-color: #606060a8;
 		border-radius: 50px 50px;
-		display: block; /* this is important because .fake is an inline element so we must set it to "block" to be able to set the width and height*/
+		display: block; 
 		transition: all .5s ease;
 		&::after {
 			content: "";
@@ -138,9 +142,8 @@
 			box-shadow: 0px 0px 1px rgb(101, 100, 100);
 			top: 65%;
 			left: 0px;
-			margin-top: -12.5px; /* the position absolute combines with top: 50%, left:0, margin-top: -(minus) half of the item's height 
-            to locate in the middle of it's parent element which is set to position relative */
-			transition: all .3s ease; /* to define how the effect will be */
+			margin-top: -12.5px; 
+			transition: all .3s ease; 
 		}
 	}
 }
