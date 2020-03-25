@@ -7,7 +7,7 @@ implementing css module with BEM
 }
 
 .textField {
-	margin: 20px 0 10px 0;
+	margin: 30px 0 10px 0;
 }
 
 .textField__Ctn {
@@ -17,6 +17,7 @@ implementing css module with BEM
 	width: 280px;
 	height: 56px;
 	position: relative;
+	margin-top: 20px;
 }
 
 /****** Input Default ******/
@@ -30,13 +31,17 @@ implementing css module with BEM
 	border-radius: 4px 4px 0 0;
 	border: none;
 	border-bottom: 1px solid rgb(179, 179, 179);
-	background-color: rgb(242, 241, 241);
+	background-color: rgb(255, 255, 255);
 	padding: 16px 12px 0 12px;
 	color: #000000de;
 }
 
 .textField__input:focus {
 	outline: none;
+	padding-top: 16px;
+}
+
+.textField__input:active{
 	padding-top: 16px;
 }
 
@@ -58,6 +63,9 @@ implementing css module with BEM
 .textField__input:not(.textField__input--type-disabled):focus ~ .textField__underLine {
 	transform: scaleX(1);
 	opacity: 1;
+}
+.textField__input--type-error:focus ~ .textField__underLine{
+	background-color: red;
 }
 
 /******  Label ******/
@@ -91,8 +99,12 @@ implementing css module with BEM
 	font-size: 12px;
 }
 
-.textField__input:not(.textField__input--type-disabled):focus + .textField__labelText,
-.textField__input:not(.textField__input--type-disabled):focus + .textField__labelText--top {
+.textField__input--type-required:focus + .textField__labelText{
+	color: #6200ee;
+}
+
+
+.textField__input--type-required:focus ~ .textField__labelText--top{
 	color: #6200ee;
 }
 
@@ -114,10 +126,14 @@ implementing css module with BEM
 	height: 55px;
 }
 
-.textField__input--type-error:focus ~ .textField__labelText,
-.textField__input--type-error:hover ~ .textField__labelText {
-	color: #b00020;
+.textField__input--type-error:focus ~ .textField__errorIcon,
+.textField__input--type-error:active ~ .textField__errorIcon{
+	opacity: 1;
 }
+
+
+
+
 
 .textField__errorIcon {
 	position: absolute;
@@ -125,6 +141,7 @@ implementing css module with BEM
 	line-height: 24px;
 	font-size: 24px;
 	color: #b00020ff;
+	opacity: 0;
 }
 
 /***** HelpText ******/
@@ -146,4 +163,26 @@ implementing css module with BEM
 
 .textField__helpText--type-error {
 	color: #b00020;
+	/* opacity: 1; */
 }
+
+.textField__input--type-error:focus + .textField__labelText--top-error{
+	color: #b00020;
+}
+
+.textField__btn{
+	width: 200px;
+	margin-top: 20px;
+	line-height: 30px;
+	border-radius: 5px;
+	font-size: 14px;
+	background-color: rgba(213, 213, 247, 0.927);
+	color: rgb(91, 91, 91);
+}
+
+.textField__btn:focus{
+	outline: none;
+    box-shadow: 0px 0px 2px 2px rgb(133, 100, 254);
+}
+
+
