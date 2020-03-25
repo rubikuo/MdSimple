@@ -8,7 +8,6 @@ implementing scss with BEM
 	display: flex;
 	flex-direction: column;
 	padding-top: 30px;
-	// justify-content: center;
 
 	&__label {
 		display: flex;
@@ -19,6 +18,7 @@ implementing scss with BEM
 		border-radius: 5px;
 		background-color: rgba(169, 168, 168, 0.33);
 	}
+
 	&__title {
 		display: inline-block;
 		margin: 10px 0;
@@ -39,7 +39,7 @@ implementing scss with BEM
 		opacity: 0;
 		position: absolute;
 		overflow: hidden;
-		/* exclud disabled checkbox */
+
 		&:not(:disabled) {
 			&:checked {
 				+ span {
@@ -86,6 +86,7 @@ implementing scss with BEM
 					}
 				}
 			}
+
 			&:focus {
 				+ span {
 					&::after {
@@ -94,6 +95,7 @@ implementing scss with BEM
 					}
 				}
 			}
+			
 			&:active {
 				+ span {
 					&::after {

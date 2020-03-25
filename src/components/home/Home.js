@@ -2,9 +2,9 @@
 import React from 'react';
 import styles from './Home.module.css';
 
-const Home = ({ components, setCurrentPage }) => {
+const Home = ({ setCurrentPage }) => {
 	const handleCurrentPage = (page) => {
-		console.log(page);
+		// console.log(page);
 		setCurrentPage(page);
 	};
 
