@@ -1,5 +1,5 @@
 /* implement only Css module */
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Home.module.css';
 
 const Home = ({ components, setCurrentPage }) => {

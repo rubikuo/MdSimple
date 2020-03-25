@@ -22,11 +22,8 @@ const TextField = ({ inputValue, handleInputValue, errorMsg, blur, setBlur, focu
 	}
 
 	let labelClass;
-	if (focus === true) {
-		if (errorMsg !== '' && inputValue.length > 0) {
-			labelClass = [ styles[`textField__labelText--top`], styles[`textField__labelText--top-error`] ].join(' ');
-		}
 
+	if (focus === true) {
 		labelClass = [ styles[`textField__labelText--top`], styles[`textField__labelText--top-focus`] ].join(' ');
 	} else if (inputValue.length > 0 && focus === false) {
 		labelClass = styles[`textField__labelText--top`];

@@ -107,6 +107,10 @@ implementing css module with BEM
 	color: #6200ee;
 }
 
+.textField__input--type-error:focus ~ .textField__labelText--top {
+	color: #b00020;
+}
+
 /******  Disabled Input ******/
 /*****************************/
 
@@ -161,9 +165,7 @@ implementing css module with BEM
 	/* opacity: 1; */
 }
 
-.textField__input--type-error:focus + .textField__labelText--top-error {
-	color: #b00020;
-}
+
 
 .textField__btn {
 	width: 200px;
