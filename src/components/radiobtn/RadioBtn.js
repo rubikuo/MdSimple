@@ -1,5 +1,5 @@
 import React from 'react';
-import "./RadioBtn.css";
+import './RadioBtn.css';
 
 const RadioBtn = () => {
 	const datas = [ 'Female', 'Male', 'Other', 'Disabled' ];
@@ -19,7 +19,7 @@ const RadioBtn = () => {
 							disabled={data === 'Disabled' ? true : false}
 						/>
 						<span className="radio--fake" />
-						<span className="radio__option" >{data === 'Disabled' ? 'Disabled option' : data}</span>
+						<span className="radio__option">{data === 'Disabled' ? 'Disabled option' : data}</span>
 					</label>
 				);
 			})}

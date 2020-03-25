@@ -13,8 +13,8 @@ const Header = ({ currentPage, setCurrentPage, mode }) => {
 	}
 	return (
 		<div className={`${styles.header__ctn}, ${styles[`header__ctn--${mode}`]}`}>
-			<div className={[styles.header__iconBar, styles[`header__iconBar--${mode}`]].join(" ")}>
-				<div className={styles.header__lefticons} >
+			<div className={[ styles.header__iconBar, styles[`header__iconBar--${mode}`] ].join(' ')}>
+				<div className={styles.header__lefticons}>
 					<FaSignal />
 					<span>Tele3</span>
 					<FaWifi />
@@ -26,10 +26,10 @@ const Header = ({ currentPage, setCurrentPage, mode }) => {
 					{currentPage !== 'home' && (
 						<button onClick={() => setCurrentPage('home')} className={styles.header__btn}>
 							<FiArrowLeft className={styles['header__btn--arrow']} />
-							<div className={styles["header__btn--boxShadow"]}></div>
+							<div className={styles['header__btn--boxShadow']} />
 						</button>
 					)}
-					<span className={styles["header__content--title"]}>{title}</span>
+					<span className={styles['header__content--title']}>{title}</span>
 				</div>
 				<div className={`${styles.header__content} ${styles['header__content--right']}`}>
 					<MdSearch />

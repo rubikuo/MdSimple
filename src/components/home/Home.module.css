@@ -2,32 +2,32 @@
 implementing css module 
 **********************/
 
-.homeCtn{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 35px 0;
-   width: 100%;
-   height: 100%;
-   flex-wrap: wrap;
+.homeCtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 35px 0;
+	width: 100%;
+	height: 100%;
+	flex-wrap: wrap;
 }
 
 .options {
-   width: 180px;
-   height: 60px;
-   border: 2px solid rgb(221, 220, 220);
-   border-radius: 10px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   background-color: rgba(22, 80, 216, 0.653);
-   color: rgb(223, 222, 222);
-   cursor: pointer;
-   font-size: 18px;
+	width: 180px;
+	height: 60px;
+	border: 2px solid rgb(221, 220, 220);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(22, 80, 216, 0.653);
+	color: rgb(223, 222, 222);
+	cursor: pointer;
+	font-size: 18px;
 }
 
-.options:hover, .options:focus{
-   outline: none;
-   box-shadow: 0px 0px 2px 2px rgb(133, 100, 254);
-   
+.options:hover,
+.options:focus {
+	outline: none;
+	box-shadow: 0px 0px 2px 2px rgb(133, 100, 254);
 }

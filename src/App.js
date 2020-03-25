@@ -28,7 +28,6 @@ const App =() => {
 	};
 
 
-
   const onSubmit = (e) => {
      e.preventDefault();
     if(inputValue.length < 8){
@@ -37,7 +36,6 @@ const App =() => {
       setErrorMsg("")
     }
     console.log(errorMsg)
-
 
   }
 
