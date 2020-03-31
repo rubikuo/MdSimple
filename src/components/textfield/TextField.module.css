@@ -39,6 +39,7 @@ implementing css module with BEM
 .textField__input:focus {
 	outline: none;
 	padding-top: 16px;
+	caret-color: #6200ee;
 }
 
 .textField__input:active {
@@ -127,6 +128,12 @@ implementing css module with BEM
 
 .textField__input--type-error {
 	height: 55px;
+}
+
+
+.textField__input--type-error:focus {
+	caret-color:#b00020ff;
+
 }
 
 .textField__input--type-error:focus ~ .textField__errorIcon,
