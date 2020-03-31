@@ -1,10 +1,1 @@
-<img width="1225" alt="Screen Shot 2020-03-31 at 7 43 36 PM" src="https://user-images.githubusercontent.com/46818235/78059446-27490780-738a-11ea-96f1-66da8e19a3dc.png">
-<img width="1089" alt="Screen Shot 2020-03-31 at 7 54 16 PM" src="https://user-images.githubusercontent.com/46818235/78059457-2a43f800-738a-11ea-94da-0fda016b7631.png">
-<img width="918" alt="Screen Shot 2020-03-31 at 7 54 33 PM" src="https://user-images.githubusercontent.com/46818235/78059458-2b752500-738a-11ea-8fc4-e9292f8d1108.png">
-<img width="800" alt="Screen Shot 2020-03-31 at 7 54 58 PM" src="https://user-images.githubusercontent.com/46818235/78059459-2ca65200-738a-11ea-9081-8095e97682b1.png">
-<img width="799" alt="Screen Shot 2020-03-31 at 7 55 06 PM" src="https://user-images.githubusercontent.com/46818235/78059460-2d3ee880-738a-11ea-8fd9-b010463cce4a.png">
-<img width="843" alt="Screen Shot 2020-03-31 at 7 55 16 PM" src="https://user-images.githubusercontent.com/46818235/78059462-2dd77f00-738a-11ea-9cbb-ab8090e716db.png">
-<img width="857" alt="Screen Shot 2020-03-31 at 7 55 47 PM" src="https://user-images.githubusercontent.com/46818235/78059464-2e701580-738a-11ea-8aae-6daf125437da.png">
-<img width="866" alt="Screen Shot 2020-03-31 at 7 55 58 PM" src="https://user-images.githubusercontent.com/46818235/78059467-2f08ac00-738a-11ea-8747-8b0c08ccd3e7.png">
-<img width="854" alt="Screen Shot 2020-03-31 at 7 56 12 PM" src="https://user-images.githubusercontent.com/46818235/78059470-2fa14280-738a-11ea-9f40-175f4836f3ec.png">
-<img width="766" alt="Screen Shot 2020-03-31 at 7 56 23 PM" src="https://user-images.githubusercontent.com/46818235/78059473-3039d900-738a-11ea-8bfa-7098bb445555.png">
+
