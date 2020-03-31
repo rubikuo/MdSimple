@@ -69,7 +69,7 @@ implementing css module with BEM
 	background-color: red;
 }
 
-/******  Label ******/
+/******  Label *******/
 /********************/
 
 .textField__input ~ .textField__labelText {
@@ -130,10 +130,8 @@ implementing css module with BEM
 	height: 55px;
 }
 
-
 .textField__input--type-error:focus {
-	caret-color:#b00020ff;
-
+	caret-color: #b00020ff;
 }
 
 .textField__input--type-error:focus ~ .textField__errorIcon,
